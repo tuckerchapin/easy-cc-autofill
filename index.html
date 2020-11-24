@@ -4,9 +4,22 @@
     <link rel="stylesheet" type="text/css" href="./normalize.css" />
     <link rel="stylesheet" type="text/css" href="./main.css" />
 
-    <title>a0.11 Easy CC Autofill</title>
+    <title>a0.12 Easy CC Autofill</title>
 
     <script data-goatcounter="https://tuckerchapin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script>
+      function copyNumber() {
+        const number = document.getElementById('cardnumber').value;
+      }
+
+      function copyExpiry() {
+        const expiry = document.getElementById('exp-date').value;
+      }
+
+      function copyCVC() {
+        const cvc = document.getElementById('cvc').value;
+      }
+    </script>
   </head>
   <body>
     <div class="corset">
@@ -18,6 +31,8 @@
           name="cardnumber"
           autocomplete="cc-number"
           placeholder="1234 1234 1234 1234"
+          inputmode="numeric"
+          onfocus="copyNumber()"
         />
         <label for="exp-date">Expiry</label>
         <input
@@ -26,6 +41,8 @@
           name="exp-date"
           autocomplete="cc-exp"
           placeholder="MM / YYYY"
+          inputmode="numeric"
+          onclick="copyExpiry()"
         />
         <label for="cvc">CVC</label>
         <input
@@ -34,6 +51,8 @@
           name="cvc"
           autocomplete="cc-csc"
           placeholder="CVC"
+          inputmode="numeric"
+          onclick="copyCVC()"
         />
       </form>
       <a
