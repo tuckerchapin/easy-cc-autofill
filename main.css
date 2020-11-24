@@ -49,6 +49,10 @@ body {
   grid-area: cvc;
 }
 
+.cc-input {
+  width: 100%;
+}
+
 label {
   display: none;
 }
