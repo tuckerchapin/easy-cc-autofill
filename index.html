@@ -8,16 +8,57 @@
 
     <script data-goatcounter="https://tuckerchapin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script>
+      function removeWhitespace(str) {
+        return str.replace(/\s/g, '');
+      }
+
+      function isOnlyNumbers(str) {
+        return /^\d+$/.test(str);
+      }
+
       function copyNumber() {
-        const number = document.getElementById('cardnumber').value;
+        try {
+          const number = removeWhitespace(document.getElementById('cardnumber').value);
+          if (number.length === 16 && isOnlyNumbers(number)) {
+            navigator.clipboard.writeText(number);
+            console.log('copied:' + number);
+          }
+        } catch (e) {
+          //
+        }
       }
 
       function copyExpiry() {
-        const expiry = document.getElementById('exp-date').value;
+        try {
+          const expiry = removeWhitespace(document.getElementById('exp-date').value);
+          if (expiry.length === 7 || expiry.length === 9) {
+            const [ month, year ] = expiry.split('/');
+            if (
+              (year.length === 2 || year.length === 4)
+              && isOnlyNumbers(month)
+              && isOnlyNumbers(year)
+              && !isNaN(month)
+              && !isNaN(year)
+            ) {
+              navigator.clipboard.writeText([ month, year ].join('/'));
+              console.log('copied: ' + [ month, year ].join('/'));
+            }
+          }
+        } catch (e) {
+          //
+        }
       }
 
       function copyCVC() {
-        const cvc = document.getElementById('cvc').value;
+        try {
+          const cvc = removeWhitespace(document.getElementById('cvc').value);
+          if (cvc.length === 3 && isOnlyNumbers(cvc)) {
+            navigator.clipboard.writeText(cvc);
+            console.log('copied: ' + cvc);
+          }
+        } catch (e) {
+          //
+        }
       }
     </script>
   </head>
