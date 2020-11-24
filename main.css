@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(0, 0%, 99%);
+}
+
+.corset {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  height: 100%;
+}
+
+@media (min-width: 400px) {
+  .corset {
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
+}
+
+.input-container {
+  display: grid;
+  grid-template-areas:
+    "number number number"
+    "month year cvc";
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cc-input[name="cardnumber"] {
+  grid-area: number;
+}
+
+.cc-input[name="ccmonth"] {
+  grid-area: month;
+}
+
+.cc-input[name="ccyear"] {
+  grid-area: year;
+}
+
+.cc-input[name="cvc"] {
+  grid-area: cvc;
+}
+
+label {
+  display: none;
+}
