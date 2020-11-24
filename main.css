@@ -28,21 +28,17 @@ body {
 .input-container {
   display: grid;
   grid-template-areas:
-    "number number number"
-    "month year cvc";
-  grid-template-columns: 1fr 1fr 1fr;
+    "number number"
+    "expiry cvc";
+  grid-template-columns: 1fr 1fr;
 }
 
 .cc-input[name="cardnumber"] {
   grid-area: number;
 }
 
-.cc-input[name="ccmonth"] {
-  grid-area: month;
-}
-
-.cc-input[name="ccyear"] {
-  grid-area: year;
+.cc-input[name="exp-date"] {
+  grid-area: expiry;
 }
 
 .cc-input[name="cvc"] {
