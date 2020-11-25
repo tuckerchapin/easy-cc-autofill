@@ -133,7 +133,7 @@ label {
     fill: hsl(0, 0%, 0%);
   }
 
-.footer-text {
+#footer-text {
   grid-area: footer;
 
   display: grid;
@@ -148,20 +148,46 @@ label {
   border: 1px solid hsl(0, 0%, 80%);
 }
 
-  .description {
-    font-size: 1em;
-  }
-
-  .disclaimer {
-    font-size: .8em;
-  }
-
-  .disclaimer a,
-  .disclaimer a:visited {
+  #footer-text a,
+  #footer-text a:visited {
     color: hsl(233, 52%, 53%);
     text-decoration: none;
   }
 
-  .disclaimer a:hover {
+  #footer-text a:hover {
     text-decoration: underline;
   }
+
+  #footer-text:not(.show-about) {
+    justify-self: center;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  #footer-text:not(.show-about):hover,
+  #footer-text:not(.show-about):active {
+    filter: brightness(1.1);
+  }
+
+#description {
+  font-size: 1em;
+}
+
+#disclaimer {
+  font-size: .8em;
+}
+
+#about-button {
+  text-transform: uppercase;
+  font-size: .8em;
+  letter-spacing: 1px;
+}
+
+#footer-text.show-about #about-button {
+  display: none;
+}
+
+#footer-text:not(.show-about) #description,
+#footer-text:not(.show-about) #disclaimer {
+  display: none;
+}
