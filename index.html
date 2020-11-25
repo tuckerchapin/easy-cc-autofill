@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="./normalize.css" />
     <link rel="stylesheet" type="text/css" href="./main.css" />
 
-    <title>a0.13 Easy CC Autofill</title>
+    <title>a0.14 Easy CC Autofill</title>
 
     <script data-goatcounter="https://tuckerchapin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script>
@@ -20,12 +20,18 @@
         document.getElementById('footer-text').classList.add('show-about');
       }
 
+      function showToast() {
+        // document.getElementById('toast-container').classList.remove('show-toast');
+        // document.getElementById('toast-container').classList.add('show-toast');
+      }
+
       function copyNumber() {
         try {
           const number = removeWhitespace(document.getElementById('cardnumber').value);
           if (number.length === 16 && isOnlyNumbers(number)) {
             navigator.clipboard.writeText(number);
-            console.log('copied:' + number);
+            this.showToast();
+            // console.log('copied:' + number);
           }
         } catch (e) {
           //
@@ -45,7 +51,8 @@
               && !isNaN(year)
             ) {
               navigator.clipboard.writeText([ month, year ].join('/'));
-              console.log('copied: ' + [ month, year ].join('/'));
+              this.showToast();
+              // console.log('copied: ' + [ month, year ].join('/'));
             }
           }
         } catch (e) {
@@ -58,7 +65,8 @@
           const cvc = removeWhitespace(document.getElementById('cvc').value);
           if (cvc.length === 3 && isOnlyNumbers(cvc)) {
             navigator.clipboard.writeText(cvc);
-            console.log('copied: ' + cvc);
+            this.showToast();
+            // console.log('copied: ' + cvc);
           }
         } catch (e) {
           //
@@ -118,6 +126,11 @@
         <div id="disclaimer">
           This site will work without Javascript or internet. It does not collect personal information or any credit card details you enter. There is one tracker included: <a href="https://www.goatcounter.com/">GoatCounter</a>, a simple visit analytics tracker that is privacy friendly and GDPR compliant.
         </div>
+      </div>
+    </div>
+    <div id="toast-container">
+      <div id="toast">
+        Copied!
       </div>
     </div>
   </body>

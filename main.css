@@ -9,6 +9,7 @@ html {
 
 body {
   background-color: hsl(0, 0%, 99%);
+  font-family: sans-serif;
 
   --input-padding: .75em;
   --border-radius: .5em;
@@ -16,6 +17,7 @@ body {
   --corset-padding: 30px;
   --corset-gap: var(--corset-padding);
   --gh-logo-size: calc(1.5 * var(--corset-padding));
+  --toast-width: 200px;
 }
 
 .corset {
@@ -74,7 +76,6 @@ body {
 
 .cc-input {
   width: 100%;
-  font-family: sans-serif;
   font-size: 1em;
   padding: var(--input-padding);
   background-color: white;
@@ -139,7 +140,6 @@ label {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: calc(var(--corset-gap) / 2);
-  font-family: sans-serif;
   user-select: none;
 
   background-color: hsl(0, 0%, 99%);
@@ -190,4 +190,51 @@ label {
 #footer-text:not(.show-about) #description,
 #footer-text:not(.show-about) #disclaimer {
   display: none;
+}
+
+#toast-container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+#toast {
+  background-color: hsl(145, 63%, 42%);
+  padding: calc(var(--corset-gap) / 2);
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-size: .8em;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.show-toast {
+  animation: slide-in-toast 4s;
+}
+
+@keyframes slide-in-toast {
+  0% {
+    opacity: 0;
+    top: -10px;
+  }
+
+  10% {
+    opacity: 1;
+    top: var(--corset-padding);
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
