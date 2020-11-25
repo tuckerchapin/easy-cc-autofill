@@ -62,58 +62,6 @@ body {
   z-index: -1;
 }
 
-.input-container {
-  grid-area: inputs;
-
-  width: 100%;
-  display: grid;
-  grid-template-areas:
-    "number number"
-    "expiry cvc";
-  grid-template-columns: 1fr 1fr;
-  margin: 0;
-}
-
-.cc-input {
-  width: 100%;
-  font-size: 1em;
-  padding: var(--input-padding);
-  background-color: white;
-  border: 1px solid hsl(0, 0%, 80%);
-  border-radius: 0;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-.cc-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px white inset !important;
-}
-
-.cc-input:focus {
-  outline: none;
-}
-
-.cc-input[name="cardnumber"] {
-  grid-area: number;
-
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-  border-bottom: none;
-}
-
-.cc-input[name="exp-date"] {
-  grid-area: expiry;
-
-  border-bottom-left-radius: var(--border-radius);
-}
-
-.cc-input[name="cvc"] {
-  grid-area: cvc;
-
-  border-bottom-right-radius: var(--border-radius);
-  border-left: none;
-}
-
 label {
   display: none;
 }

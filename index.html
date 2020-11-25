@@ -3,12 +3,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./normalize.css" />
     <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link rel="stylesheet" type="text/css" href="./cc-styles.css" />
 
     <title>a0.14 Easy CC Autofill</title>
 
     <script data-goatcounter="https://tuckerchapin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script>
       function removeWhitespace(str) {
+        console.log('clicked')
         return str.replace(/\s/g, '');
       }
 
@@ -90,36 +92,51 @@
   <body>
     <div class="corset">
       <form class="input-container">
-        <label for="cardnumber">Card number</label>
-        <input
-          id="cardnumber"
-          class="cc-input"
-          name="cardnumber"
-          autocomplete="cc-number"
-          placeholder="1234 1234 1234 1234"
-          inputmode="numeric"
-          onfocus="copyNumber()"
-        />
-        <label for="exp-date">Expiry</label>
-        <input
-          id="exp-date"
-          class="cc-input"
-          name="exp-date"
-          autocomplete="cc-exp"
-          placeholder="MM / YYYY"
-          inputmode="numeric"
-          onclick="copyExpiry()"
-        />
-        <label for="cvc">CVC</label>
-        <input
-          id="cvc"
-          class="cc-input"
-          name="cvc"
-          autocomplete="cc-csc"
-          placeholder="CVC"
-          inputmode="numeric"
-          onclick="copyCVC()"
-        />
+        <div
+          id="cardnumber-container"
+          class="cc-input-container"
+        >
+          <label for="cardnumber">Card number</label>
+          <input
+            id="cardnumber"
+            class="cc-input"
+            name="cardnumber"
+            autocomplete="cc-number"
+            placeholder="1234 1234 1234 1234"
+            inputmode="numeric"
+            onfocus="copyNumber()"
+          />
+        </div>
+        <div
+          id="exp-date-container"
+          class="cc-input-container"
+        >
+          <label for="exp-date">Expiry</label>
+          <input
+            id="exp-date"
+            class="cc-input"
+            name="exp-date"
+            autocomplete="cc-exp"
+            placeholder="MM / YYYY"
+            inputmode="numeric"
+            onclick="copyExpiry()"
+          />
+        </div>
+        <div
+          id="cvc-container"
+          class="cc-input-container"
+        >
+          <label for="cvc">CVC</label>
+          <input
+            id="cvc"
+            class="cc-input"
+            name="cvc"
+            autocomplete="cc-csc"
+            placeholder="CVC"
+            inputmode="numeric"
+            onclick="copyCVC()"
+          />
+        </div>
       </form>
       <a
         class="gh-link"
