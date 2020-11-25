@@ -21,8 +21,10 @@
       }
 
       function showToast() {
-        // document.getElementById('toast-container').classList.remove('show-toast');
-        // document.getElementById('toast-container').classList.add('show-toast');
+        if (document.getElementById('toast-container')) {
+          document.getElementById('toast-container').remove();
+        }
+        document.body.appendChild(document.getElementById('toast-template').content.cloneNode(true));
       }
 
       function copyNumber() {
@@ -128,10 +130,12 @@
         </div>
       </div>
     </div>
-    <div id="toast-container">
-      <div id="toast">
-        Copied!
+    <template id="toast-template">
+      <div id="toast-container">
+        <div id="toast">
+          Copied!
+        </div>
       </div>
-    </div>
+    </template>
   </body>
 </html>

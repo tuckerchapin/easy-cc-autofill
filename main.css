@@ -193,6 +193,7 @@ label {
 }
 
 #toast-container {
+  opacity: 0;
   position: absolute;
   left: 0;
   width: 100%;
@@ -203,6 +204,7 @@ label {
   align-content: center;
   align-items: center;
   pointer-events: none;
+  animation: slide-in-toast 4s;
 }
 
 #toast {
@@ -213,10 +215,6 @@ label {
   font-size: .8em;
   letter-spacing: 1px;
   color: white;
-}
-
-.show-toast {
-  animation: slide-in-toast 4s;
 }
 
 @keyframes slide-in-toast {
