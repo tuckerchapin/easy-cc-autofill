@@ -27,10 +27,30 @@
         document.body.appendChild(document.getElementById('toast-template').content.cloneNode(true));
       }
 
+      function validateNumber(number) {
+        return number.length === 16 && isOnlyNumbers(number);
+      }
+
+      function validateExpiry() {
+        if (expiry.length === 7 || expiry.length === 9) {
+          const [ month, year ] = expiry.split('/');
+          return (year.length === 2 || year.length === 4)
+            && isOnlyNumbers(month)
+            && isOnlyNumbers(year)
+            && !isNaN(month)
+            && !isNaN(year);
+        }
+        return false;
+      }
+
+      function validateCVC() {
+        return cvc.length === 3 && isOnlyNumbers(cvc);
+      }
+
       function copyNumber() {
         try {
           const number = removeWhitespace(document.getElementById('cardnumber').value);
-          if (number.length === 16 && isOnlyNumbers(number)) {
+          if (validateNumber(number)) {
             navigator.clipboard.writeText(number);
             this.showToast();
             // console.log('copied:' + number);
@@ -43,19 +63,10 @@
       function copyExpiry() {
         try {
           const expiry = removeWhitespace(document.getElementById('exp-date').value);
-          if (expiry.length === 7 || expiry.length === 9) {
-            const [ month, year ] = expiry.split('/');
-            if (
-              (year.length === 2 || year.length === 4)
-              && isOnlyNumbers(month)
-              && isOnlyNumbers(year)
-              && !isNaN(month)
-              && !isNaN(year)
-            ) {
-              navigator.clipboard.writeText([ month, year ].join('/'));
-              this.showToast();
-              // console.log('copied: ' + [ month, year ].join('/'));
-            }
+          if (validateExpiry(expiry)) {
+            navigator.clipboard.writeText([ month, year ].join('/'));
+            this.showToast();
+            // console.log('copied: ' + [ month, year ].join('/'));\
           }
         } catch (e) {
           //
@@ -65,7 +76,7 @@
       function copyCVC() {
         try {
           const cvc = removeWhitespace(document.getElementById('cvc').value);
-          if (cvc.length === 3 && isOnlyNumbers(cvc)) {
+          if (validateCVC(cvc)) {
             navigator.clipboard.writeText(cvc);
             this.showToast();
             // console.log('copied: ' + cvc);
