@@ -52,7 +52,7 @@ body {
 
 .corset::before {
   content: "";
-  background-image: url("./watermark-diagonal.png");
+  background-image: url("../assets/watermark-diagonal.png");
   position: absolute;
   top: 0px;
   right: 0px;
