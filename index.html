@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="./main.css" />
     <link rel="stylesheet" type="text/css" href="./cc-styles.css" />
 
-    <title>a0.15 Easy CC Autofill</title>
+    <title>a0.16 Easy CC Autofill</title>
 
     <script async data-goatcounter="https://tuckerchapin.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
     <script>
@@ -33,15 +33,8 @@
       }
 
       function validateExpiry(expiry) {
-        console.log('trying to validate ' + expiry)
-        console.log(expiry.length, expiry.length === 5 || expiry.length === 7)
         if (expiry.length === 5 || expiry.length === 7) {
           const [ month, year ] = expiry.split('/');
-          console.log(expiry.split('/'), month, year, year.length, isOnlyNumbers(month), isOnlyNumbers(year), !isNaN(month), !isNaN(year), (year.length === 2 || year.length === 4)
-            && isOnlyNumbers(month)
-            && isOnlyNumbers(year)
-            && !isNaN(month)
-            && !isNaN(year))
           return (year.length === 2 || year.length === 4)
             && isOnlyNumbers(month)
             && isOnlyNumbers(year)
