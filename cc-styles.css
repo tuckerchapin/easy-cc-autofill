@@ -76,4 +76,10 @@
 .copy-icon {
   height: 100%;
   background-color: transparent;
+  fill: hsl(0, 0%, 50%);
 }
+
+  .copy-button:hover .copy-icon,
+  .copy-button:active .copy-icon {
+    fill: hsl(0, 0%, 0%);
+  }
