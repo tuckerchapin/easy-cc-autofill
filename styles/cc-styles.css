@@ -22,7 +22,6 @@
 
 #cardnumber-container {
   grid-area: number;
-
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   border-bottom: none;
@@ -30,15 +29,39 @@
 
 #exp-date-container {
   grid-area: expiry;
-
-  border-bottom-left-radius: var(--border-radius);
 }
 
 #cvc-container {
   grid-area: cvc;
-
   border-bottom-right-radius: var(--border-radius);
-  border-left: none;
+}
+
+@media (max-width: 400px) {
+  .input-container {
+    grid-template-areas:
+      "number"
+      "expiry"
+      "cvc";
+    grid-template-columns: 1fr;
+  }
+
+  #exp-date-container {
+    border-bottom: none;
+  }
+
+  #cvc-container {
+    border-bottom-left-radius: var(--border-radius);
+  }
+}
+
+@media (min-width: 400px) {
+  #exp-date-container {
+    border-bottom-left-radius: var(--border-radius);
+  }
+
+  #cvc-container {
+    border-left: none;
+  }
 }
 
 .cc-input {

@@ -25,10 +25,12 @@
       }
 
       function validateNumber(number) {
+        return number;
         return number.length === 16 && isOnlyNumbers(number);
       }
 
       function validateExpiry(expiry) {
+        return expiry;
         if (expiry.length === 5 || expiry.length === 7) {
           const [ month, year ] = expiry.split('/');
           return (year.length === 2 || year.length === 4)
@@ -41,6 +43,7 @@
       }
 
       function validateCVC(cvc) {
+        return cvc;
         return cvc.length === 3 && isOnlyNumbers(cvc);
       }
 
