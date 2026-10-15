@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- Source for assets/og.png (1200x630 link-preview image). Regenerate: see README. -->
+<!-- The page's own watermark and card fields, larger, under the name. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../styles/normalize.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/cc-styles.css">
+  <style>
+    html, body { height: 630px; margin: 0; }
+    .og { display: grid; place-content: center; justify-items: center; row-gap: 48px; height: 630px; }
+    /* The page's watermark (main.css puts it on .corset::before). */
+    .og::before { content: ""; position: absolute; inset: 0; background-image: url("../assets/watermark-diagonal.png"); opacity: .1; z-index: -1; }
+    h1 { margin: 0; font-size: 72px; font-weight: 600; color: hsl(0, 0%, 15%); }
+    .input-container { grid-area: auto; width: 760px; font-size: 32px; border-radius: var(--border-radius); }
+  </style>
+</head>
+<body>
+  <div class="og">
+    <h1>Easy CC Autofill</h1>
+    <form class="input-container">
+      <div id="cardnumber-container" class="cc-input-container">
+        <input class="cc-input" placeholder="1234 1234 1234 1234">
+        <div class="copy-button"><svg class="copy-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m65.301 53.898h-11.5v-11.5c0-3.8008 0-3.8008-3.8008-3.8008-3.8984 0-3.8984 0-3.8984 3.8008v11.5h-11.5c-3.8984 0-3.8984 0-3.8008 3.8008-0.10156 3.8008-0.10156 3.8008 3.8008 3.8008h11.5v11.5c0 3.8984 0 3.8984 3.8984 3.8008 3.8008 0 3.8008 0 3.8008-3.8008v-11.5h11.5c3.8008-0.10156 3.8008-0.10156 3.8008-3.8008 0.097657-3.8008 0.097657-3.8008-3.8008-3.8008zm15.5 38.402h-61.5v-76.898h11.5v7.6992h38.5v-7.6992h11.5zm-30.801-88.5c1.8984 0 3.8008 1.8984 3.8008 3.8008 0 1.8984-1.8984 3.8008-3.8008 3.8008-1.8984 0-3.8008-1.8984-3.8008-3.8008 0-1.8008 1.9023-3.8008 3.8008-3.8008zm34.602 3.8984h-23.102v-3.8008c0-3.8008 0-3.8008-3.8008-3.8008h-15.398c-3.8008 0-3.8008 0-3.8008 3.8008v3.8008h-23.102c-3.8008 0-3.8008 0-3.8008 3.8008v84.602c0 3.8008 0 3.8008 3.8008 3.8008h69.199c3.8008 0 3.8008 0 3.8008-3.8008v-84.602c0.10156-3.8008 0.10156-3.8008-3.7969-3.8008z"/></svg></div>
+      </div>
+      <div id="exp-date-container" class="cc-input-container">
+        <input class="cc-input" placeholder="MM / YYYY">
+        <div class="copy-button"><svg class="copy-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m65.301 53.898h-11.5v-11.5c0-3.8008 0-3.8008-3.8008-3.8008-3.8984 0-3.8984 0-3.8984 3.8008v11.5h-11.5c-3.8984 0-3.8984 0-3.8008 3.8008-0.10156 3.8008-0.10156 3.8008 3.8008 3.8008h11.5v11.5c0 3.8984 0 3.8984 3.8984 3.8008 3.8008 0 3.8008 0 3.8008-3.8008v-11.5h11.5c3.8008-0.10156 3.8008-0.10156 3.8008-3.8008 0.097657-3.8008 0.097657-3.8008-3.8008-3.8008zm15.5 38.402h-61.5v-76.898h11.5v7.6992h38.5v-7.6992h11.5zm-30.801-88.5c1.8984 0 3.8008 1.8984 3.8008 3.8008 0 1.8984-1.8984 3.8008-3.8008 3.8008-1.8984 0-3.8008-1.8984-3.8008-3.8008 0-1.8008 1.9023-3.8008 3.8008-3.8008zm34.602 3.8984h-23.102v-3.8008c0-3.8008 0-3.8008-3.8008-3.8008h-15.398c-3.8008 0-3.8008 0-3.8008 3.8008v3.8008h-23.102c-3.8008 0-3.8008 0-3.8008 3.8008v84.602c0 3.8008 0 3.8008 3.8008 3.8008h69.199c3.8008 0 3.8008 0 3.8008-3.8008v-84.602c0.10156-3.8008 0.10156-3.8008-3.7969-3.8008z"/></svg></div>
+      </div>
+      <div id="cvc-container" class="cc-input-container">
+        <input class="cc-input" placeholder="CVC">
+        <div class="copy-button"><svg class="copy-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m65.301 53.898h-11.5v-11.5c0-3.8008 0-3.8008-3.8008-3.8008-3.8984 0-3.8984 0-3.8984 3.8008v11.5h-11.5c-3.8984 0-3.8984 0-3.8008 3.8008-0.10156 3.8008-0.10156 3.8008 3.8008 3.8008h11.5v11.5c0 3.8984 0 3.8984 3.8984 3.8008 3.8008 0 3.8008 0 3.8008-3.8008v-11.5h11.5c3.8008-0.10156 3.8008-0.10156 3.8008-3.8008 0.097657-3.8008 0.097657-3.8008-3.8008-3.8008zm15.5 38.402h-61.5v-76.898h11.5v7.6992h38.5v-7.6992h11.5zm-30.801-88.5c1.8984 0 3.8008 1.8984 3.8008 3.8008 0 1.8984-1.8984 3.8008-3.8008 3.8008-1.8984 0-3.8008-1.8984-3.8008-3.8008 0-1.8008 1.9023-3.8008 3.8008-3.8008zm34.602 3.8984h-23.102v-3.8008c0-3.8008 0-3.8008-3.8008-3.8008h-15.398c-3.8008 0-3.8008 0-3.8008 3.8008v3.8008h-23.102c-3.8008 0-3.8008 0-3.8008 3.8008v84.602c0 3.8008 0 3.8008 3.8008 3.8008h69.199c3.8008 0 3.8008 0 3.8008-3.8008v-84.602c0.10156-3.8008 0.10156-3.8008-3.7969-3.8008z"/></svg></div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
